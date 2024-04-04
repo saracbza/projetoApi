@@ -4,10 +4,10 @@ import authMiddleware from '../../middlewares/auth.middleware'
 
 const taskRoutes = Router()
 
-taskRoutes.post('/', TaskController.store)
+taskRoutes.post('/', authMiddleware, TaskController.store)
 taskRoutes.get('/', authMiddleware, TaskController.index)
-taskRoutes.get('/:id', TaskController.show)
-taskRoutes.delete('/:id', TaskController.delete)
-taskRoutes.put('/:id', TaskController.update)
+taskRoutes.get('/:id', authMiddleware, TaskController.show)
+taskRoutes.delete('/:id', authMiddleware, TaskController.delete)
+taskRoutes.put('/:id', authMiddleware, TaskController.update)
 
 export default taskRoutes
