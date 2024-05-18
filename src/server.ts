@@ -11,7 +11,8 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(routes)
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://projetoapi-r37e.onrender.com']
+    origin: ['https://projetoapi-r37e.onrender.com', 'http://localhost:5173'],
+    credentials: true 
 }))
 
 app.listen(port, () => {

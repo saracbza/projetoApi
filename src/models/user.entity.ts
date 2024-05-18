@@ -25,5 +25,5 @@ export default class User extends BaseEntity {
     tasks!: Task[]
 
     @OneToMany(() => Document, document => document.user)
-    documents!: Document[]
+    documents?: Document[]
 }
