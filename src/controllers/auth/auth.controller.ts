@@ -21,7 +21,7 @@ export default class AuthController{
         user.password = bcrypt.hashSync(password, 10)
         await user.save()
 
-        return res.json({
+        return res.status(201).json({
             id: user.id,
             name: user.name,
             email: user.email
